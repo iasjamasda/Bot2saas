@@ -222,6 +222,9 @@ Exemplo: '${prefix}setprefix ?'
 
 🔰 Comandos de Grupos 🔰 
 
+Comando: '${prefix}totag'
+Função: marca todos os membros do grupo
+
 Comando: '${prefix}listonline'
 Função: lista os membros que estão online
 

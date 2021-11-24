@@ -716,6 +716,23 @@ async function starts() {
 			}
 
 			switch(command) {
+				case 'totag':
+					if (!isGroup) return reply(mess.only.group)
+					if (!isGroupAdmins) return reply(mess.only.admin)
+					value = body.slice(12)
+					group = await client.groupMetadata(from)
+					member = group['participants']
+					mem = []
+					member.map( async adm => {
+						mem.push(adm.id.replace('c.us', 's.whatsapp.net'))
+					})
+					options = {
+						text: value,
+						contextInfo: { mentionedJid: mem },
+						quoted: mek
+					}
+					client.sendMessage(from, options, text)
+					break
 				case 'jogatina':
 					try {
 						if (!isGroup) return reply(mess.only.group)
