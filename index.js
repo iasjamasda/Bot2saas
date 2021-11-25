@@ -719,7 +719,7 @@ async function starts() {
 				case 'totag':
 					if (!isGroup) return reply(mess.only.group)
 					if (!isGroupAdmins) return reply(mess.only.admin)
-					value = body.slice(12)
+					value = body.slice(7)
 					group = await client.groupMetadata(from)
 					member = group['participants']
 					mem = []
